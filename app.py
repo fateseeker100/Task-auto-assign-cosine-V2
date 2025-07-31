@@ -19,6 +19,16 @@ def cosine_similarity(vec1, vec2):
         return 0
     return np.dot(v1, v2) / (np.linalg.norm(v1) * np.linalg.norm(v2))
 
+def compute_score(last_task, candidate):
+    # Base cosine similarity
+    score = cosine_similarity(last_task["vector"], candidate["vector"])
+    # Continuity bonus
+    if candidate["product"] == last_task["product"]:
+        score += 0.3
+    if candidate["task_id"] == last_task["task_id"]:
+        score += 0.5
+    return score
+
 def format_time(minutes):
     hour = 8 + (minutes // 60)
     minute = minutes % 60
@@ -126,10 +136,10 @@ def assign_tasks(products_to_produce, workers, products_df, slot_duration_minute
             for w in workers:
                 last_task = worker_last_task[w]
                 if last_task:
-                    # Pick best similarity, tie-breaker by remaining qty
+                    # Pick best based on score (similarity + continuity bonus), tie-break by remaining qty
                     best_task = max(
                         available_tasks,
-                        key=lambda t: (cosine_similarity(last_task["vector"], t["vector"]), t["remaining_qty"])
+                        key=lambda t: (compute_score(last_task, t), t["remaining_qty"])
                     )
                 else:
                     # First task after prep phase: pick biggest remaining qty
@@ -210,7 +220,7 @@ def main():
     page = st.sidebar.radio("Go to", ["Home","Products","Workers","Production Order"])
     if page == "Home":
         st.header("Welcome")
-        st.write("Cosine similarity-based scheduling with strict prerequisites.")
+        st.write("Cosine similarity + continuity-based scheduling with strict prerequisites.")
     elif page == "Products":
         st.header("📦 Product Database")
         st.dataframe(products_df, use_container_width=True)
@@ -220,10 +230,18 @@ def main():
     elif page == "Production Order":
         st.header("🎯 Production Order")
         products_to_produce = {}
-        for product in products_df["Product"].unique():
-            qty = st.number_input(f"{product}", min_value=0, max_value=1000, value=0, step=1)
-            if qty > 0:
-                products_to_produce[product] = qty
+        
+        # Quick add button
+        if st.button("Add 100 pcs to ALL products"):
+            for product in products_df["Product"].unique():
+                products_to_produce[product] = 100
+            st.write("✅ All products set to 100 pcs.")
+        else:
+            for product in products_df["Product"].unique():
+                qty = st.number_input(f"{product}", min_value=0, max_value=1000, value=0, step=1)
+                if qty > 0:
+                    products_to_produce[product] = qty
+
         selected_workers = st.multiselect("Choose Workers", workers_df["Worker"].tolist(), default=workers_df["Worker"].tolist())
         if products_to_produce and st.button("🚀 Run Simulation"):
             result = assign_tasks(products_to_produce, selected_workers, products_df)
