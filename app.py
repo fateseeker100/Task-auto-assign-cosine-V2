@@ -229,22 +229,30 @@ def main():
         st.dataframe(workers_df, use_container_width=True)
     elif page == "Production Order":
         st.header("🎯 Production Order")
-        products_to_produce = {}
-        
+
+        # Initialize session state for product quantities
+        if "products_to_produce" not in st.session_state:
+            st.session_state["products_to_produce"] = {}
+
         # Quick add button
         if st.button("Add 100 pcs to ALL products"):
             for product in products_df["Product"].unique():
-                products_to_produce[product] = 100
-            st.write("✅ All products set to 100 pcs.")
-        else:
-            for product in products_df["Product"].unique():
-                qty = st.number_input(f"{product}", min_value=0, max_value=1000, value=0, step=1)
-                if qty > 0:
-                    products_to_produce[product] = qty
+                st.session_state["products_to_produce"][product] = 100
+            st.success("✅ All products set to 100 pcs.")
+
+        # Render inputs with persisted values
+        for product in products_df["Product"].unique():
+            default_qty = st.session_state["products_to_produce"].get(product, 0)
+            qty = st.number_input(f"{product}", min_value=0, max_value=1000, value=default_qty, step=1)
+            if qty > 0:
+                st.session_state["products_to_produce"][product] = qty
+            elif product in st.session_state["products_to_produce"]:
+                del st.session_state["products_to_produce"][product]
 
         selected_workers = st.multiselect("Choose Workers", workers_df["Worker"].tolist(), default=workers_df["Worker"].tolist())
-        if products_to_produce and st.button("🚀 Run Simulation"):
-            result = assign_tasks(products_to_produce, selected_workers, products_df)
+
+        if st.session_state["products_to_produce"] and st.button("🚀 Run Simulation"):
+            result = assign_tasks(st.session_state["products_to_produce"], selected_workers, products_df)
             if result:
                 st.success(f"Simulation completed! Estimated {result['estimated_days']} day(s).")
                 display_schedule(result["schedule"], result["estimated_days"])
