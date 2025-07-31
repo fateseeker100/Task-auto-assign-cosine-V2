@@ -1,0 +1,51 @@
+Product,Task,Result,Requirements,Bending,Gluing,Assembling,EdgeScrap,OpenPaper,QualityControl,TimePerPieceSeconds
+Acrylic Stand T - A5,opening the masking paper,ST1,,30,30,30,70,100,90,31
+Acrylic Stand T - A5,unsharp/scrapthe edge of the acrylic sheet,ST2,ST1,20,30,30,100,60,90,61
+Acrylic Stand T - A5,1st step - tp bending fold,ST3,ST2,100,50,40,20,20,40,46
+Acrylic Stand T - A5,2nd step - st foot side 90 degrees bending,ST4,ST3,100,40,30,10,40,40,48
+Acrylic Stand T - A5,3rd step -2nd foot side 90 degrees bending,ST5,ST4,100,40,30,10,40,40,58
+Acrylic Stand T - A5,QC-bendin results  and putting it in box,ST6,ST5,20,10,10,30,80,100,31
+Acrylic Stand L - A6,opening the masking paper,SL1,,30,50,30,70,100,90,26
+Acrylic Stand L - A6,unsharp/scrap the edge of the acrylic sheet,SL2,SL1,20,45,30,100,60,90,52
+Acrylic Stand L - A6,1st step - top bending fold,SL3,SL2,100,50,40,20,20,40,45
+Acrylic Stand L - A6,2nd step - 1st foot side 15 degrees bending,SL4,SL3,100,40,30,10,40,40,41
+Acrylic Stand L - A6,QC-bending results  and putting it in box,SL5,SL4,20,10,10,30,80,100,26
+Tips Box 12x12x12 cm,opening the masking paper,TB1,,30,50,30,70,100,90,203
+Tips Box 12x12x12 cm,attach glue side body to main body,TB2,TB1,30,100,40,20,20,40,127
+Tips Box 12x12x12 cm,body 90 degrees bending 1 + glue,TB3,TB2,100,80,40,20,20,40,151
+Tips Box 12x12x12 cm,body 90 degrees bending 2 + glue,TB4,TB3,100,80,40,20,20,40,155
+Tips Box 12x12x12 cm,body 90 degrees bending 3 + glue,TB5,TB4,100,80,40,20,20,40,153
+Tips Box 12x12x12 cm,attach reinforcement 4 pieces,TB6,TB5,30,100,40,20,20,40,125
+Tips Box 12x12x12 cm,glue hinge to opening,TB7,TB6,30,100,40,20,20,40,129
+Tips Box 12x12x12 cm,QC bending gluing results and putting it in box,TB8,TB7,20,10,10,30,80,100,103
+Miniature Display Box 15x7x7 cm,opening the masking paper,DB1,,30,50,30,70,100,90,90
+Miniature Display Box 15x7x7 cm,top part 1st step - attach glue side body to main body,DB2,DB1,30,100,80,20,20,40,105
+Miniature Display Box 15x7x7 cm,top part 2nd step - body 90 degrees bending 1 + glue,DB3,DB2,30,100,40,20,20,40,108
+Miniature Display Box 15x7x7 cm,top part 3rd step - body 90 degrees bending 2 + glue,DB4,DB3,30,100,40,20,20,40,102
+Miniature Display Box 15x7x7 cm,attach reinforcement 4 pieces,DB5,DB4,30,100,40,20,20,40,98
+Miniature Display Box 15x7x7 cm,base part 1st step - glue 2 pieces together,DB6,DB5,30,100,80,20,20,40,91
+Miniature Display Box 15x7x7 cm,QC bending gluing results  and putting it in box,DB7,DB6,20,10,10,30,80,100,76
+Multifunction Box 8x8x8 cm,opening the masking paper,MB1,,30,50,30,70,100,90,90
+Multifunction Box 8x8x8 cm,bottom part 1st step - attach glue side body to main body,MB2,MB1,30,100,80,20,20,40,105
+Multifunction Box 8x8x8 cm,bottom part 2nd step - body 90 degrees bending 1 + glue,MB3,MB2,80,100,70,20,20,40,108
+Multifunction Box 8x8x8 cm,bottom part 3rd step - body 90 degrees bending 2 + glue,MB4,MB3,80,100,70,20,20,40,112
+Multifunction Box 8x8x8 cm,attach reinforcement 4 pieces,MB5,MB4,30,100,40,20,20,40,78
+Multifunction Box 8x8x8 cm,top part 1st step - 90 degrees bending 1,MB6,MB5,100,40,30,10,40,40,78
+Multifunction Box 8x8x8 cm,top part 1st step - 90 degrees bending 2,MB7,MB6,100,40,30,10,40,40,78
+Multifunction Box 8x8x8 cm,top part 1st step - 90 degrees bending 3,MB8,MB7,100,40,30,10,40,40,78
+Multifunction Box 8x8x8 cm,top part 1st step - 90 degrees bending 4,MB9,MB8,100,40,30,10,40,40,78
+Multifunction Box 8x8x8 cm,QC bending gluing results  and putting it in box,MB10,MB9,20,10,10,30,80,100,60
+Wall Brochure Holder A5,opening the masking paper,WB1,,30,50,30,70,100,90,50
+Wall Brochure Holder A5,unsharp/scrap the edge of the acrylic sheet,WB2,WB1,20,45,30,100,60,90,60
+Wall Brochure Holder A5,1st step - attach glue side body to main body,WB3,WB2,30,100,40,20,20,40,64
+Wall Brochure Holder A5,bottom part 2nd step - body 90 degrees bending 1 + glue,WB4,WB3,80,100,70,20,20,40,72
+Wall Brochure Holder A5,bottom part 3rd step - body 90 degrees bending 2 + glue,WB5,WB4,80,100,70,20,20,40,78
+Wall Brochure Holder A5,QC bending gluing results  and putting it in box,WB6,WB5,20,10,10,30,80,100,51
+Table  Brochure Holder A5,opening the masking paper,BH1,,30,50,30,70,100,90,45
+Table  Brochure Holder A5,unsharp/scrap the edge of the acrylic sheet,BH2,BH1,20,45,30,100,60,90,55
+Table  Brochure Holder A5,front body bending step 1,BH3,BH2,100,60,40,20,20,40,62
+Table  Brochure Holder A5,front body bending step 2,BH4,BH3,100,60,40,20,20,40,57
+Table  Brochure Holder A5,"front body bending step 3, and glueing",BH5,BH4,100,80,40,20,20,40,70
+Table  Brochure Holder A5,glue front body to back body,BH6,BH5,20,100,90,20,20,40,45
+Table  Brochure Holder A5,glue reinforcements 4 pieces,BH7,BH6,20,100,60,20,20,40,62
+Table  Brochure Holder A5,QC bending gluing results - putting in box,BH8,BH7,20,10,10,30,80,100,50
