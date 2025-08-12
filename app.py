@@ -222,13 +222,13 @@ def main():
         st.header("Welcome")
         st.write("Cosine similarity + continuity-based scheduling with strict prerequisites.")
     elif page == "Products":
-        st.header("📦 Product Database")
+        st.header("Product Database")
         st.dataframe(products_df, use_container_width=True)
     elif page == "Workers":
-        st.header("👥 Worker Database")
+        st.header("Worker Database")
         st.dataframe(workers_df, use_container_width=True)
     elif page == "Production Order":
-        st.header("🎯 Production Order")
+        st.header("Production Order")
 
         # Initialize session state for product quantities
         if "products_to_produce" not in st.session_state:
@@ -261,3 +261,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
