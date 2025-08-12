@@ -235,10 +235,10 @@ def main():
             st.session_state["products_to_produce"] = {}
 
         # Quick add button
-        if st.button("Add 100 pcs to ALL products"):
-            for product in products_df["Product"].unique():
-                st.session_state["products_to_produce"][product] = 100
-            st.success("✅ All products set to 100 pcs.")
+#        if st.button("Add 100 pcs to ALL products"):
+#            for product in products_df["Product"].unique():
+#                st.session_state["products_to_produce"][product] = 100
+#            st.success("✅ All products set to 100 pcs.")
 
         # Render inputs with persisted values
         for product in products_df["Product"].unique():
@@ -261,4 +261,5 @@ def main():
 
 if __name__ == "__main__":
     main()
+
 
